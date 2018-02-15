@@ -32,14 +32,37 @@ To gain access to the medium, stations first sense a carrier signal. If the medi
 
 ### Why does CSMA/CD not work well on a wireless network?
 
-In wireless networks, collisions can occure close to a receiver while the involved senders do not detect this collision due to attenuation
+In wireless networks, collisions can occur close to a receiver while the involved senders do not detect this collision due to attenuation
+
+### Explain the meaning of the end-to-end argument, one of the design principles of the Internet protocol suite.
+
+All functions which require knowledge of the state of end-to-end communication should be realized at the endpoints of a network and not within the network. This simplifies the network core and enables scalability of the core network.
+
+### Explain the term Autonomous System and how it relates to Interior Gateway (Routing) Protocols and Exterior Gateway (Routing) Protocols.
+
+An *Autonomous System* is a set of routers and networks under the same administration. An
+Interior Gateway (Routing) Protocol is used within an Autonomous System to calculate routes
+while an Exterior Gateway (Routing) Protocol is used to find routes that cross Autonomous
+Systems.
+
+### Give an example of an ordered, decentralized, dynamic, time division multiplexing media access control mechanism
+
+Token passing (e.g., as used by an IEEE 802.5 network) is an example of an ordered, decentralized, dynamic, time division multiplexing media access control mechanism.
+
+### What is the main difference between CSMA and CSMA-CD?
+
+CSMA-CD allows the sender to terminate the transmission as soon as a collision has been detected and thus recovers the channel faster
+
+### Why does CSMA-CD not work well in wireless networks?
+
+CSMA-CD relies on the assumption that all nodes can hear each other within a bounded amount of time. In wireless networks, the set of nodes in range of a sending node is not the same for all nodes of the network and thus there can be collisions that can not be observed by all nodes.
 
 ### True/False
 
 | T    | F    | Problem                                  |
 | ---- | ---- | ---------------------------------------- |
 | X    |      | CSMA/CD is not required on a full-duplex ethernet link |
-|      | X    |                                          |
+|      | X    | The hidden station problem is solved by CSMA/CD |
 |      | X    | Slotted Aloha is a time division multiplexing media access control mechanism |
 |      | X    | In case of MACA, all stations receiving RTS must send a CTS |
 
@@ -261,7 +284,7 @@ Signals are carried simultaneously on the same medium by allocating to each sign
 
 #### Transmission Error Detection
 
-- Simple parity bits can be added to code words to detect bit b_nb_{n-1}...b_1b_0errors, however, aren't very strong in detecting errors which affect multiple bits
+- Simple parity bits can be added to code words to detect bit $b_nb_{n-1}...b_1b_0$ errors, however, aren't very strong in detecting errors which affect multiple bits
 - Computation of error check codes must be efficient
 
 #### Cyclic Redundancy Check (CRC)
